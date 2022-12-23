@@ -1,0 +1,20 @@
+apiVersion : v1
+kind : Pod
+metadata :
+  name : my-web
+  labels : 
+    x : df
+
+spec :
+  containers:
+    - name : my-nginx
+      image : ebrahemhassan/nginx
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 80
+      resources :
+        limits :
+          memory : "512Mi"
+          cpu : "1"
+        requests:
+          memory : "100Mi"
